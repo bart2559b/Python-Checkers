@@ -5,7 +5,7 @@ from .piece import Piece
 class Board:
     def __init__(self):
         self.board = []
-        self.red_left = self.white_left = 12
+        self.red_left = self.white_left = 8
         self.red_kings = self.white_kings = 0
         self.create_board()
     
@@ -34,9 +34,9 @@ class Board:
             self.board.append([])
             for col in range(COLS):
                 if col % 2 == ((row +  1) % 2):
-                    if row < 3:
+                    if row < 2:
                         self.board[row].append(Piece(row, col, WHITE))
-                    elif row > 4:
+                    elif row > 5:
                         self.board[row].append(Piece(row, col, RED))
                     else:
                         self.board[row].append(0)
